@@ -1,5 +1,3 @@
-// server/routes/tasks.js
-
 const express = require('express');
 const router = express.Router();
 const { db } = require('../firebase');
@@ -7,7 +5,6 @@ const authenticateToken = require('../middleware/auth');
 
 const tasksRef = db.collection('tasks');
 
-// Rota para obter todas as tarefas
 router.get('/', authenticateToken, async (req, res) => {
   try {
     const tasksSnapshot = await tasksRef.where('userId', '==', req.user.userId).get();
@@ -18,7 +15,6 @@ router.get('/', authenticateToken, async (req, res) => {
   }
 });
 
-// Rota para criar uma nova tarefa
 router.post('/', authenticateToken, async (req, res) => {
   const { title, status } = req.body;
 
@@ -36,7 +32,6 @@ router.post('/', authenticateToken, async (req, res) => {
   }
 });
 
-// Rota para atualizar uma tarefa
 router.put('/:id', authenticateToken, async (req, res) => {
   const { title, status } = req.body;
   const taskId = req.params.id;
@@ -55,7 +50,6 @@ router.put('/:id', authenticateToken, async (req, res) => {
   }
 });
 
-// Rota para excluir uma tarefa
 router.delete('/:id', authenticateToken, async (req, res) => {
   const taskId = req.params.id;
 

@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Frontend da Aplicação
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é o diretório do frontend da aplicação, desenvolvido com React.js.
 
-## Available Scripts
+## Estrutura de Diretórios
 
-In the project directory, you can run:
+```
+├── public/          # Arquivos públicos estáticos
+│   ├── index.html   # HTML principal
+│   ├── favicon.ico  # Ícone da aplicação
+│   └── manifest.json# Manifest para PWA
+│
+├── src/             # Código fonte React
+│   ├── components/  # Componentes React reutilizáveis
+│   ├── pages/       # Páginas da aplicação
+│   ├── services/    # Serviços e integrações com API
+│   ├── styles/      # Arquivos de estilo
+│   ├── utils/       # Utilitários e helpers
+│   └── App.js       # Componente principal
+│
+├── package.json     # Dependências e scripts
+└── README.md        # Esta documentação
+```
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React.js para construção da interface
+- React Router para navegação
+- Axios para requisições HTTP
+- Styled-components para estilização
+- Material-UI para componentes de interface
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Como Iniciar o Desenvolvimento
 
-### `npm test`
+1. Instale as dependências:
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Inicie o servidor de desenvolvimento:
+```bash
+npm start
+```
 
-### `npm run build`
+3. Acesse `http://localhost:3000`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Scripts Disponíveis
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `npm start`: Inicia o servidor de desenvolvimento
+- `npm test`: Executa os testes
+- `npm run build`: Gera build de produção
+- `npm run eject`: Ejeta as configurações do Create React App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Padrões de Código
 
-### `npm run eject`
+- Utilize componentes funcionais com hooks
+- Mantenha componentes pequenos e reutilizáveis
+- Siga as convenções de nomenclatura:
+  - PascalCase para componentes
+  - camelCase para funções e variáveis
+  - kebab-case para arquivos CSS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Integração com Backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A aplicação se comunica com o backend através de uma API REST. As configurações de conexão estão em `src/services/api.js`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Deployment
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para fazer deploy da aplicação:
 
-## Learn More
+1. Gere o build de produção:
+```bash
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. O diretório `build` estará pronto para deploy
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Testes
 
-### Code Splitting
+Execute os testes com:
+```bash
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Troubleshooting
 
-### Analyzing the Bundle Size
+Problemas comuns e soluções:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Erro de CORS: Verifique as configurações do backend
+2. Falha na build: Limpe o cache do npm

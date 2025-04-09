@@ -1,5 +1,3 @@
-// client/src/components/Auth.js
-
 import React, { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { useSnackbar } from 'notistack';
